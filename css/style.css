@@ -1,0 +1,285 @@
+*{
+    /* border: 1px solid red; */
+    margin: 0;
+}
+
+html{
+    --micro-width: 15px;
+    --micro-height: 21px;
+
+    --footer-height: 30px;
+
+    --input-lg: 558px;
+    --frq-lg: 558px;
+
+    --input-md: 492px;
+    --frq-md: 380px;
+
+    --input-sm: 318px;
+    --frq-sm: 318px;
+}
+
+body{
+    position: relative;
+    font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+    font-size: 13px;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+    height: 100vh;
+    margin: 0;
+    color: white;
+
+    min-width: 400px;
+    animation: smooth-bg 700ms linear;
+
+   
+}
+
+
+a{
+    text-decoration: none;
+    color: rgb(236, 236, 236);
+}
+
+.header a:not(.dont-underline-this):hover{
+    text-decoration: underline;
+}
+
+@keyframes smooth-bg{
+    from{
+        background-image: url(../images/bg-white.png);
+    }
+    to{
+        background-image: url(../images/bg.jpg);
+    }
+}
+
+
+.main-container{
+    width: 100%;
+    margin: auto;
+    padding: 0% 0%;
+}
+
+.header{
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+.header-list{
+    list-style-type: none;
+}
+
+.header-list__elem{
+    margin-right: 15px;
+    display: inline;
+}
+
+.header-list__apps-img{
+    height: 32px;
+    width: 32px;
+    position: relative;
+    top: 12px;
+}
+
+
+.header-list__apps-img:hover{
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.header a:hover{
+    opacity: 0.8;
+}
+
+/* .header-list__elem_hover-circle:hover{
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+} */
+
+.google-logo{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+    height: 100px;
+
+    background-image: url(../images/google-logo.jpg);
+    background-attachment: unset;
+    background-position: center -76px;
+    background-size: 265px 265px;
+    background-repeat: no-repeat;
+}
+
+.search-form{
+    margin: 0 auto;
+    margin-bottom: 26px;
+    position: relative;
+    border-radius: 24px;
+    background-color: white;
+    padding: 15px 15px 10px 15px;
+    box-sizing: border-box;
+
+    width: var(--input-lg);
+}
+
+.search-form__input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-form__micro{
+    width: var(--micro-width);
+    height: var(--micro-height);
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: url(../images/micro.png) no-repeat center;
+    background-size: var(--micro-width) var(--micro-height);
+    cursor: pointer;
+    outline: none; 
+    border: none;
+}
+
+.frequent-links{
+    width: var(--frq-lg);
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+.card{
+    position: relative;
+    width: 25%;
+    text-align: center;
+    
+}
+
+.card p{
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+}
+
+.card__link{
+    padding: 7px 4px;
+    display: block;
+}
+
+.card__link:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.card__img-back{
+    background-color: white;
+    border-radius: 50%;
+    padding: 13px;
+    margin: 15px auto;
+    max-height: 23px; 
+    max-width: 23px;
+}
+
+.card__text-back{
+    border-radius: 12px;
+    color: rgb(5, 5, 5);
+    background-color: white;
+    padding: 2px;
+}
+
+.card__img{
+    max-width: 23px;
+    max-height: 23px;
+}
+
+.card__edit-menu{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    outline: none;
+   
+
+}
+
+.card__edit-menu-img{
+    height: 30px;
+    width: 20px;
+}
+
+.card__edit-menu:hover{
+    opacity: 1;
+}
+
+footer{
+    position: absolute;
+    bottom: var(--footer-height);
+    left: 50px;
+    text-decoration: underline;
+    text-decoration-color: white;
+    font-weight: 500;
+}
+
+footer a{
+    padding: 8px 10px;
+}
+
+footer a:hover{
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+@media screen and (max-width: 864px){
+    .card:nth-child(5){
+        display: none;
+    }
+
+    .search-form{
+        width: var(--input-md);
+    }
+
+    .frequent-links{
+        width: var(--frq-md);
+    }
+
+    .card{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 694px){
+    .card:nth-child(4){
+        display: none;
+    }
+    
+    .search-form{
+        width: var(--input-sm);
+    }
+
+    .frequent-links{
+        width: var(--frq-sm);
+    }
+
+    .card{
+        width: 33%;
+    }
+}
